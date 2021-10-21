@@ -10,7 +10,7 @@ $(function() {
             $(".header_menu").toggleClass("pointerEventsOn");
             $(this).dequeue();
             //queueを何度も動かしたい時は一度リセットする!!
-        }) 
+        })
     }else{
         $(".header_menu").toggleClass("pointerEventsOn");
         $(".header_menu").toggleClass("slideDown");
@@ -35,14 +35,14 @@ $(function () {
         imgLoaded = 0,
         current = 0,
         progressTimer = setInterval(updateProgress, 1000 / 60);
-        
+
         imgLoad.on("progress", function () {
             imgLoaded++;
         });
-        
+
         function updateProgress () {
             var target = (imgLoaded / imgTotal) * 100;
-            current += (target - current) * 0.1; 
+            current += (target - current) * 0.1;
             var windowWidth = $(window).width();
             if (windowWidth >= 560){
                 progressBar.css({ width: current*2.5 + "px" });
@@ -50,7 +50,7 @@ $(function () {
             }else{
                 progressBar.css({ width: current*1.8 + "px" });
             }
-            progressText.text(Math.floor(current) + "%");            
+            progressText.text(Math.floor(current) + "%");
             if(current >= 100){
                 clearInterval(progressTimer);
                 container.addClass("progress_complete");
@@ -60,16 +60,16 @@ $(function () {
                 mainIntro.delay(1750).animate({opacity: 1}, 10);
                 progressText
                 .delay(500)
-                .animate({ opacity: 0 }, 250);            
-                $(".background").delay(1000).queue(function(){          
-                    $(this).addClass("colorInversion"); 
+                .animate({ opacity: 0 }, 250);
+                $(".background").delay(1000).queue(function(){
+                    $(this).addClass("colorInversion");
                     //なぜかthisを$()で囲ってる
                     $(".gray_zone_index").delay(2000).queue(function(){
                         $(".gray_zone_index")[0].style.top = "0px";
                         //スタイルに直接書き込むときは[]で引数必要!!!!!!
                         $(".footer_index")[0].style.bottom = "0px";
-                        intro.add(moreButton).animate({opacity: 1}, 500);      
-                    })    
+                        intro.add(moreButton).animate({opacity: 1}, 500);
+                    })
                 })
             }
             if (current > 99.9) {
@@ -81,7 +81,7 @@ $(function () {
 
 $(function() {
   $(".more_button").click(function () {
-      $("#progress").animate({opacity: 0} ,500);  
+      $("#progress").animate({opacity: 0} ,500);
       $(".img_left").addClass("slideIn");
       $(".img_right").addClass("slideIn");
       $(".link_wrapper")[0].style.visibility = "visible";
@@ -89,7 +89,7 @@ $(function() {
       //animateの時は[]いらないよ!
   });
 });
-$(function(){   
+$(function(){
     var about = $(".about_link"),
         works = $(".works_link"),
         aboutBar = $(".about_link_bar"),
@@ -97,13 +97,13 @@ $(function(){
         imgLeft = $(".img_left"),
         imgRight = $(".img_right"),
         backLeftText = $(".back_left_text"),
-        backRightText = $(".back_right_text"); 
-    
+        backRightText = $(".back_right_text");
+
     mouseenter(about,imgLeft,aboutBar,backLeftText,stop)
     mouseleave(about,imgLeft,aboutBar,backLeftText,stop)
     mouseenter(works,imgRight,worksBar,backRightText,stop)
-    mouseleave(works,imgRight,worksBar,backRightText,stop) 
-    
+    mouseleave(works,imgRight,worksBar,backRightText,stop)
+
     function mouseenter(link,img,linkBar,backText,callback){
         link.mouseenter(function(){
             var windowWidth = $(window).width();
@@ -117,7 +117,7 @@ $(function(){
             }
         })
     }
-    
+
     function mouseleave(link,img,linkBar,backText,callback){
         link.mouseleave(function(){
             var windowWidth = $(window).width();
@@ -131,7 +131,7 @@ $(function(){
             }
         })
     }
-    
+
     function stop(link,img,linkBar,backText){
         link.stop(false, true);
         $(img).stop(false, true);
@@ -141,7 +141,7 @@ $(function(){
 });
 
 $(function(){
-    
+
     $(".about_link").click(function() {
         var windowWidth = $(window).width();
             if(windowWidth >= 560){
@@ -150,8 +150,8 @@ $(function(){
                 $(".img_left").removeClass("slideIn");
                 $(".back_left_text")[0].style.opacity = 0.2;
                 $(".about_link").delay(1000).queue(function(){
-                    window.location.href = "about.html";  
-                })      
+                    window.location.href = "about.html";
+                })
             }
     });
 
@@ -163,8 +163,8 @@ $(function(){
                 $(".img_right").removeClass("slideIn");
                 $(".back_right_text")[0].style.opacity = 0.2;
                 $(".works_link").delay(1000).queue(function(){
-                    window.location.href = "works.html";  
-                })  
+                    window.location.href = "works.html";
+                })
             }
     });
 })
