@@ -430,13 +430,13 @@ h4{
 
 /*sp*/
 
-@media(max-width: 559px　and min-width: 300px){
+@media(max-width: 559px){
 
-  .wrapper{
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
-  }
+.wrapper{
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
 
 .main_intro{
     font-size: 40px;
@@ -508,16 +508,4 @@ h4{
     bottom: calc((99vh - 180px) * 1/10 + 60px);
     letter-spacing: 0px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
 }
