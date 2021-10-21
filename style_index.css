@@ -353,6 +353,12 @@ h4{
 
 @media(max-width: 959px) and (min-width: 560px){
 
+.wrapper{
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
 .main_intro{
     font-size: 60px;
     width: 400px;
@@ -426,18 +432,11 @@ h4{
 
 @media(max-width: 559px　and min-width: 300px){
 
-body{
+  .wrapper{
+    width: 100vw;
     height: 100vh;
     overflow: hidden;
-    width: 100vw;
-}
-
-main{
-    display: block;
-    width: 100vw;
-    height: 100vh;
-    background-color: #070707;
-}
+  }
 
 .main_intro{
     font-size: 40px;
