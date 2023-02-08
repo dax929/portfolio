@@ -6,6 +6,8 @@
   position: fixed;
   width: 100vw;
   height: 100vh;
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
   overflow: hidden;
   background-color: #F8F8F8;
   cursor: none;
@@ -53,6 +55,8 @@
   background-color: #070707;
   width: 100vw;
   height: 100vh;
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
   z-index: 1;
 }
 
@@ -110,6 +114,8 @@
   display: none;
   width: 100vw;
   height: 100vh;
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
 }
 
 .progress_bg1{
@@ -685,6 +691,8 @@
   width: 90vw;
   top: 10vh;
   height: 90vh;
+  min-height: 90vh;
+  min-height: -webkit-fill-available;
   display: flex;
   flex-wrap: wrap;
 }
@@ -722,9 +730,9 @@
 }
 
 .progress_bar{
-  height: 80px;
+  height: 60px;
   top: 47vh;
-  left: calc(50vw - 140px);
+  left: calc(50vw - 130px);
 }
 
 .progress_text {
@@ -737,12 +745,16 @@
 
 
 .progress_bar_complete{
-    width: 280px;
+    width: 260px;
 }
 
 .tap{
-  width: 280px;
-  height: 80px;
+  width: 260px;
+  height: 60px;
+}
+
+.tap_btn{
+  line-height: 60px;
 }
 
 .bg_text h2{

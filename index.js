@@ -30,7 +30,7 @@ $(function () {
         if (windowWidth >= 600){
             progressBar.css({ width: current*3.2 + "px" });
         }else{
-            progressBar.css({ width: current*2.8 + "px" });
+            progressBar.css({ width: current*2.6 + "px" });
         }
         progressText.text(Math.floor(current) + "%");
 
