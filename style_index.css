@@ -6,8 +6,6 @@
   position: fixed;
   width: 100vw;
   height: 100vh;
-  min-height: 100vh;
-  min-height: -webkit-fill-available;
   overflow: hidden;
   background-color: #F8F8F8;
   cursor: none;
@@ -55,8 +53,7 @@
   background-color: #070707;
   width: 100vw;
   height: 100vh;
-  min-height: 100vh;
-  min-height: -webkit-fill-available;
+
   z-index: 1;
 }
 
@@ -114,8 +111,6 @@
   display: none;
   width: 100vw;
   height: 100vh;
-  min-height: 100vh;
-  min-height: -webkit-fill-available;
 }
 
 .progress_bg1{
@@ -692,7 +687,6 @@
   top: 10vh;
   height: 90vh;
   min-height: 90vh;
-  min-height: -webkit-fill-available;
   display: flex;
   flex-wrap: wrap;
 }
@@ -706,6 +700,10 @@
 
 /*スマホ*/
 @media only screen and (max-width: 599px){
+
+.wrapper{
+  height: calc(var(--vh, 1vh) * 100);
+}
 
 .cursor{
   display: none;
@@ -723,6 +721,7 @@
   letter-spacing: 0.8em;
   text-indent: 0.8em;
   top: calc(45vh - 35px);
+  top: calc(var(--vh, 1vh) * 45 - 35px);
   width: 350px;
   height: 65px;
   font-size: 65px;
@@ -732,11 +731,13 @@
 .progress_bar{
   height: 60px;
   top: 47vh;
+  top: calc(var(--vh, 1vh) * 47);
   left: calc(50vw - 130px);
 }
 
 .progress_text {
     top: 58vh;
+    top: calc(var(--vh, 1vh) * 58);
     font-size: 13px;
     width: 100px;
     height: 40px;
@@ -773,11 +774,13 @@
 
 .link_wrapper_about{
   top: 20vh;
+  top: calc(var(--vh, 1vh) * 20);
   left: 20vw;
 }
 
 .link_wrapper_works{
   bottom: 20vh;
+  bottom: calc(var(--vh, 1vh) * 20);
   right: 20vw;
 }
 
@@ -789,7 +792,9 @@
 .about_contents{
   width: 90vw;
   top: 5vh;
+  top: calc(var(--vh, 1vh) * 5);
   height: 90vh;
+  height: calc(var(--vh, 1vh) * 90);
   display: block;
 }
 
