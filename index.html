@@ -1,179 +1,205 @@
 <!doctype html>
 <html>
 <head>
-	<meta charset="UTF-8">
-	<title>DAX - PORTFOLIO</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="viewport" content="height=device-height, initial-scale=1">
+  <meta charset="UTF-8">
+  <title>DAX - PORTFOLIO</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="height=device-height, initial-scale=1">
   <link rel="shortcut icon" href="img/favicon.ico">
-	<link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
-    <!-- adobefont-->
+  <!-- adobefont-->
   <link rel="stylesheet" href="https://use.typekit.net/gew4qrl.css">
-  <link rel="stylesheet" href="style.css">
-	<link rel="stylesheet" href="style_index.css">
-	<!--jquery-->
-	<script
-  src="https://code.jquery.com/jquery-3.6.0.min.js"
-  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-  crossorigin="anonymous"></script>
-  <script src="index.js"></script>
-    <!--imagesLoaded-->
-  <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+  <!-- style -->
+  <link rel="stylesheet" href="/common/css/reset.css">
+  <link rel="stylesheet" href="/common/css/style.css">
+  <!-- jquery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+  <!--imagesLoaded-->
+  <script src="/common/js/imagesloaded.pkgd.min.js"></script>
+  <!-- script -->
+  <script src="/common/js/script.js" defer></script>
 </head>
 <body>
-	<div class="wrapper">
-		<section class="cursor">
-			<div class="cursor_dot"></div>
-	    <div class= "cursor_follower"></div>
-		</section>
-		<section class="progress">
-			<div class="progress_bg progress_bg1"></div>
-			<h1 class="progress_title">DAX</h1>
-			<div class="progress_bg progress_bg2"></div>
-			<span class="progress_bar"></span>
-			<span class="progress_text">0%</span>
-			<div class="progress_bg progress_bg3"></div>
-		</section>
-		<section class="tap">
-			<button type="button" name="tap_btn" class="tap_btn">TAP</button>
-		</section>
-		<section class="bg_text">
-			<h2 class="bg_text_top">DESIGN</h2>
-			<h2 class="bg_text_bottom">DEVELOP</h2>
-		</section>
-		<section class="bg_cp">
-			<svg>
-				<defs>
-					<clipPath id="clip_path_box">
-						<rect id="boxA" x = "0" y = "0"/>
-						<rect id="boxB" x = "0" y = "0"/>
-						<rect id="boxC" x = "0" y = "0"/>
-						<rect id="boxD" x = "0" y = "0"/>
-						<rect id="boxE" x = "0" y = "0"/>
-						<rect id="boxF" x = "0" y = "0"/>
-					</clipPath>
-				</defs>
-			</svg>
-			<div class="bg_cp_img">
-				<img src="img/main_clip_bg.jpg" alt="bg">
-			</div>
-		</section>
-		<section class="bg">
-			<img class="main_bg "src="img/main_bg.jpeg" alt="">
-			<img src="img/back_img_left.png" alt="左" class="slide_img slide_img_about">
-			<img src="img/back_img_right.png" alt="右" class="slide_img slide_img_works">
-			<img class = "about_bg_img"src="img/about_bg_small.jpg" alt="">
-			<img class = "works_bg_img"src="img/works_bg.jpg" alt="">
-		</section>
+  <div class="l-wrapper">
+    <div class="p-cursor">
+      <span class="p-cursor__item --dot"></span>
+      <span class="p-cursor__item --follower"></span>
+    </div>
+    <div class="c-full-screen p-progress">
+      <div class="c-full-screen p-progress__bg --z1"></div>
+      <span class="c-absolute--center c-text--space p-progress__title">
+        DAX
+      </span>
+      <div class="c-full-screen p-progress__bg --z3"></div>
+      <span class="p-progress__bar"></span>
+      <span class="c-absolute--center p-progress__num">0%</span>
+      <div class="c-full-screen p-progress__bg --z5"></div>
+    </div> 
+    <div class="c-absolute--center p-tap">
+      <button class="p-tap__btn" type="button" name="tap_btn">
+        <span class="c-text--space p-tap__text">TAP</span>
+      </button>
+    </div>
+    <div class="c-full-screen p-bg-text-wrapper">
+      <span class="c-absolute--center c-text--space-80 p-bg-text --top">DESIGN</span>
+      <span class="c-absolute--center c-text--space-80 p-bg-text --bottom">DEVELOP</span>
+    </div>
+    <div class="c-full-screen p-bg-cp">
+      <svg class="p-bg-cp__svg">
+        <defs>
+          <clipPath id="cp">
+            <rect class="p-bg-cp__box --a" x = "0" y = "0"/>
+            <rect class="p-bg-cp__box --b" x = "0" y = "0"/>
+            <rect class="p-bg-cp__box --c" x = "0" y = "0"/>
+            <rect class="p-bg-cp__box --d" x = "0" y = "0"/>
+            <rect class="p-bg-cp__box --e" x = "0" y = "0"/>
+            <rect class="p-bg-cp__box --f" x = "0" y = "0"/>
+          </clipPath>
+        </defs>
+      </svg>
+      <img class="c-full-screen p-bg-cp__img" src="/img/main_clip_bg.jpg">
+    </div>
+    <div class="c-full-screen p-bg-img">
+      <img class="c-full-screen p-bg-img__main" src="/img/main_bg.jpeg">
+      <div class="c-full-screen p-bg-img__slide-wrapper --about">
+        <img class="p-bg-img__slide  --about is-slide-out" src="/img/back_img.png">
+      </div>
+      <div class="c-full-screen p-bg-img__slide-wrapper --works">
+        <img class="p-bg-img__slide --works is-slide-out" src="/img/back_img.png">
+      </div>
+    </div>
+    <div class="c-full-screen p-nav">
+      <button class="p-nav__link --about" type="button">
+        <span class="p-nav__text">About</span>
+        <span class="p-nav__bar"></span>
+      </button>
+      <button class="p-nav__link --works" type="button">
+        <span class="p-nav__text">Works</span>
+        <span class="p-nav__bar"></span>
+      </button>
+    </div>
+    <div class="p-page --about is-hidden is-mouse-inactive">
+      <div class="c-column-box p-about__inner">
+        <div class="c-column__item--50 p-about__img-wrapper">
+          <img class="p-about__img" src="/img/about_bg.jpg" alt="">
+        </div>
+        <div class="c-column__item--50 c-scroll-box p-about__contents">
+          <dl class="c-grid-box --3-7 p-about__list">
+            <dt class="p-about__list-title">PROFILE</dt>
+            <dd class="p-about__list-text">
+              DAX / 楠田達平<br>
+              WEB Design , Coding , <br class="c-br-sp">WEB Direction<br>
+              鳥取県生まれ、東京都在住。2021年、大学在学中よりフリーランスとして活動を開始。<br>
+              趣味は音楽制作、謎解き。動画サイトに自作楽曲を投稿している。
+            </dd>
+            <dt class="p-about__list-title">CAREER</dt>
+            <dd class="p-about__list-text">
+              2021：クラウドソーシングサービスを中心に活動を開始。<br>
+              2022：クレソン株式会社と業務委託契約を締結。<br>
+              2023：東京都内のWEB制作会社に入社。<br>
+            </dd>
+            <dt class="p-about__list-title">SKILLSET</dt>
+            <dd class="p-about__list-text">
+              HTML,CSS(SCSS),<br class="c-br-sp">JavaScript(jQuery),PHP,MySQL<br>
+              WordPress,Wix,STUDIO<br>
+              Photoshop,Illustrator,XD,Figma<br>
+              Search Engine Optimization,Web Writing
+            </dd>
+            <dt class="p-about__list-title">CONCEPT</dt>
+            <dd class="p-about__list-text">
+              シンプルさと遊び心の融合を目指したデザイン。<br>
+              ディレクション及び、デザイン、コーディング、運用と一気通貫で対応できるため、俯瞰的な視点をもった制作を得意とする。
+            </dd>
+          </dl>
+          <div class="p-about__link">
+            <a class="c-center-box p-about__contact" href="">
+              <span class="p-about__link-text">CONTACT</span>
+            </a>
+          </div>
+        </div>
+      </div>
 
-		</section>
-		<section>
-			<div class="link_wrapper link_wrapper_about">
-				<h3>
-					<span class="link_text about_link_text">About</span>
-					<span class="link_bar link_bar_about"></span>
-				</h3>
-			</div>
-			<div class="link_wrapper link_wrapper_works">
-				<h3>
-					<span class="link_text works_link_text">Works</span>
-					<span class="link_bar link_bar_works"></span>
-				</h3>
-			</div>
-		</section>
-		<section class="about_contents">
-			<div class="about_main_img">
-				<div class="about_main_img_cover"></div>
-			</div>
-			<div class="about_text about_slide">
-				<dl>
-					<dt>PROFILE</dt>
-					<dd>
-							<p>DAX / 楠田達平</p>
-							<p>Web Design , Coding , Web Direction</p>
-							<p>鳥取生まれ、広島在住。2021年よりフリーランスとして活動。</p>
-							<p>趣味：音楽制作、謎解き、旅行</p>
-					</dd>
-					<dt>SKILLSET</dt>
-					<dd>
-						<p>HTML5,CSS3,JavaScript,PHP,MySQL,Python</p>
-						<p>WordPress,Wix,STUDIO</p>
-						<p>Photoshop,Illustrator,XD,Figma</p>
-						<p>Search Engine Optimization,Web Writting</p>
-					</dd>
-					<dt>Concept</dt>
-					<dd>
-						<p>シンプルさと遊び心のバランス。</p>
-						<p>要件定義、ディレクションからデザイン、コーディングまで対応できるため、
-							常に全体の流れや完成系を意識しながらの設計を得意とする。
-						</p>
-					</dd>
-				</dl>
-			</div>
-			<div class="about_contact_wrapper about_slide">
-				<a class="contact"  href="https://forms.gle/CvhguJsvZHgf5xhY6" target="_blank"　rel="noopener">
-					<h3>CONTACT</h3>
-				</a>
-			</div>
-			<div class="about_logo about_slide">
-			</div>
-		</section>
-		<section class="works_contents">
-			<article class="works_item_blank">
-					<button class="works_wrapper_button" onclick="window.open('https://creson.jp/')">
-						<img class="works_img" src="works/creson/top_sum.png">
-							<div class= "works_intro_wrapper">
-									<h2 class="works_title">CRESON Corp. HP</h2>
-									<p class = "works_ganre">Direction , Design , Develop</p>
-							</div>
-					</button>
-			</article>
-			<article class="works_item_blank">
-					<button class="works_wrapper_button" onclick="window.open('https://creson.jp/service/douyin/')">
-						<img class="works_img" src="works/creson/douyin_sum.png">
-							<div class= "works_intro_wrapper">
-									<h2 class="works_title">CRESON Corp. LP</h2>
-									<p class = "works_ganre">Design , Develop</p>
-							</div>
-					</button>
-			</article>
-			<article class="works_item_blank">
-					<button class="works_wrapper_button" onclick="window.open('https://creson.jp/service/video-create/')">
-						<img class="works_img" src="works/creson/LP-design_develop.png">
-							<div class= "works_intro_wrapper">
-									<h2 class="works_title">CRESON Corp. LP</h2>
-									<p class = "works_ganre">Design , Develop</p>
-							</div>
-					</button>
-			</article>
-			<article class="works_item_blank">
-					<button class="works_wrapper_button" onclick="window.open('https://creson.jp/media/')">
-						<img class="works_img" src="works/creson/media_develop.png">
-							<div class= "works_intro_wrapper">
-									<h2 class="works_title">CRESON Media</h2>
-									<p class = "works_ganre">Design , Develop for WordPress</p>
-							</div>
-					</button>
-			</article>
-			<article class="works_item_blank">
-					<button class="works_wrapper_button">
-						<img class="works_img" src="works/WP_develop_A.jpg">
-							<div class= "works_intro_wrapper">
-									<h2 class="works_title">A Certain Media</h2>
-									<p class = "works_ganre">Develop for WordPress</p>
-							</div>
-					</button>
-			</article>
-			<article class="works_item_blank">
-					<button class="works_wrapper_button">
-						<img class="works_img" src="works/Design_A.jpg" alt="works1">
-						<div class= "works_intro_wrapper">
-								<h2 class="works_title"></h2>
-								<p class = "works_ganre"></p>
-						</div>
-					</button>
-			</article>
-		</section>
-	</div>
+    </div>
+    <div class="p-page --works is-hidden is-mouse-inactive">
+      <div class="c-scroll-box p-works__contents">
+        <ul class="c-grid-box --3 --2-1200 --1-600 p-works__list">
+          <li class="p-works__item">
+            <a class="p-works__link --1" href="https://creson.jp/" target="_blank" rel="noopener">
+              <div class="p-works__detail">
+                <span class="p-works__title">CRESON Corp. HP</span><br>
+                <span class="p-works__title --sub">Direction , Design , Develop</span>
+              </div>
+            </a>
+          </li>
+          <li class="p-works__item">
+            <a class="p-works__link --2" href="https://creson.jp/service/douyin/" target="_blank" rel="noopener">
+              <div class="p-works__detail">
+                <span class="p-works__title">CRESON Corp. LP</span><br>
+                <span class="p-works__title --sub">Direction , Design , Develop</span>
+              </div>
+            </a>
+          </li>
+          <li class="p-works__item">
+            <a class="p-works__link --3" href="https://creson.jp/service/video-create/" target="_blank" rel="noopener">
+              <div class="p-works__detail">
+                <span class="p-works__title">CRESON Corp. LP</span><br>
+                <span class="p-works__title --sub">Direction , Design , Develop</span>
+              </div>
+            </a>
+          </li>
+          <li class="p-works__item">
+            <a class="p-works__link --4" href="https://creson.jp/media/" target="_blank" rel="noopener">
+              <div class="p-works__detail">
+                <span class="p-works__title">CRESON Media</span><br>
+                <span class="p-works__title --sub">Design , Develop for WordPress</span>
+              </div>
+            </a>
+          </li>
+          <li class="p-works__item">
+            <a class="p-works__link --5">
+              <div class="p-works__detail">
+                <span class="p-works__title">A Certain Media</span><br>
+                <span class="p-works__title --sub">Develop for WordPress</span>
+              </div>
+            </a>
+          </li>
+          <li class="p-works__item">
+            <a class="p-works__link --6">
+              <div class="p-works__detail">
+                <span class="p-works__title">A Certain LP</span><br>
+                <span class="p-works__title --sub">Direction , Design</span>
+              </div>
+            </a>
+          </li>
+          <!-- <li class="p-works__item">
+            <a class="p-works__link --7">
+              <div class="p-works__detail">
+                <span class="p-works__title">A Certain LP</span><br>
+                <span class="p-works__title --sub">Direction , Design</span>
+              </div>
+            </a>
+          </li>
+          <li class="p-works__item">
+            <a class="p-works__link --8">
+              <div class="p-works__detail">
+                <span class="p-works__title">A Certain LP</span><br>
+                <span class="p-works__title --sub">Direction , Design</span>
+              </div>
+            </a>
+          </li>
+          <li class="p-works__item">
+            <a class="p-works__link --9">
+              <div class="p-works__detail">
+                <span class="p-works__title">A Certain LP</span><br>
+                <span class="p-works__title --sub">Direction , Design</span>
+              </div>
+            </a>
+          </li> -->
+        </ul>
+        <div class="p-works__more">
+          <span class="p-works__more-text">MORE  (Getting Ready) </span>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
