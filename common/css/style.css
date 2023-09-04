@@ -688,22 +688,22 @@ body {
   width: 100%;
 }
 .p-works__link.--1 {
-  background-image: url(/works/creson/top_sum.png);
+  background-image: url(works/creson/top_sum.png);
 }
 .p-works__link.--2 {
-  background-image: url(/works/creson/douyin_sum.png);
+  background-image: url(works/creson/douyin_sum.png);
 }
 .p-works__link.--3 {
-  background-image: url(/works/creson/LP-design_develop.png);
+  background-image: url(works/creson/LP-design_develop.png);
 }
 .p-works__link.--4 {
-  background-image: url(/works/creson/media_develop.png);
+  background-image: url(works/creson/media_develop.png);
 }
 .p-works__link.--5 {
-  background-image: url(/works/WP_develop_A.jpg);
+  background-image: url(works/WP_develop_A.jpg);
 }
 .p-works__link.--6 {
-  background-image: url(/works/Design_A.jpg);
+  background-image: url(works/Design_A.jpg);
 }
 .p-works__link:hover > .p-works__detail {
   opacity: 1;
