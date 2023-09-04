@@ -786,5 +786,3 @@ const handleNavClickFunc = (() => {
 
   handleFunc();
 })();
-
-// worksアクション
