@@ -24,7 +24,7 @@ body {
 .l-wrapper {
   background-color: $white;
   height: 100vh;
-  min-height: calc(var(--vh , 1) * 100);
+  max-height: calc(var(--vh , 1vw) * 100);
   overflow: hidden;
   position: fixed;
   width: 100%;
