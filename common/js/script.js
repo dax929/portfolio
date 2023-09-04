@@ -29,10 +29,21 @@ const setScaleReFunc = (() => {
   }
   setScaleFunc();
 
-  window.addEventListener('resize',() => {
+  const throttledSetScale = throttle((e) => {
     setScaleFunc();
-  })
+  }, 50); 
+
+  window.addEventListener('resize',throttledSetScale)
 })();
+
+// スマホ判定
+const isSP = (() => {
+  if(navigator.userAgent.match(/iPhone|Android.+Mobile/)){
+    return true;
+  }else{
+    return false;
+  }
+})
 
 // DOM要素の取得
 const DOMList = (() => {

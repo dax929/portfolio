@@ -12,6 +12,7 @@ body {
 .l-wrapper {
   background-color: #f8f8f8;
   height: 100vh;
+  min-height: calc(var(--vh, 1) * 100);
   overflow: hidden;
   position: fixed;
   width: 100%;
