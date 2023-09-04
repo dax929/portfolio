@@ -645,7 +645,7 @@ body {
 }
 .p-works__list {
   border: 1px solid #070707;
-  height: 600px;
+  height: 610px;
   margin-bottom: 60px;
   width: 100%;
 }
@@ -656,15 +656,12 @@ body {
 }
 @media screen and (max-width: 1200px) {
   .p-works__list {
-    height: 900px;
-  }
-  .p-works__item {
-    height: 300px;
+    height: 914px;
   }
 }
 @media screen and (max-width: 800px) {
   .p-works__list {
-    height: 750px;
+    height: 764px;
   }
   .p-works__item {
     height: 250px;
@@ -672,7 +669,7 @@ body {
 }
 @media screen and (max-width: 600px) {
   .p-works__list {
-    height: calc((90vw - 10px) * 0.625 * 6);
+    height: calc((90vw - 10px) * 0.625 * 6 + 3px);
   }
   .p-works__item {
     aspect-ratio: 16/10;
@@ -688,22 +685,22 @@ body {
   width: 100%;
 }
 .p-works__link.--1 {
-  background-image: url(works/creson/top_sum.png);
+  background-image: url(../../works/creson/top_sum.png);
 }
 .p-works__link.--2 {
-  background-image: url(works/creson/douyin_sum.png);
+  background-image: url(../../works/creson/douyin_sum.png);
 }
 .p-works__link.--3 {
-  background-image: url(works/creson/LP-design_develop.png);
+  background-image: url(../../works/creson/LP-design_develop.png);
 }
 .p-works__link.--4 {
-  background-image: url(works/creson/media_develop.png);
+  background-image: url(../../works/creson/media_develop.png);
 }
 .p-works__link.--5 {
-  background-image: url(works/WP_develop_A.jpg);
+  background-image: url(../../works/WP_develop_A.jpg);
 }
 .p-works__link.--6 {
-  background-image: url(works/Design_A.jpg);
+  background-image: url(../../works/Design_A.jpg);
 }
 .p-works__link:hover > .p-works__detail {
   opacity: 1;

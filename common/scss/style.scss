@@ -783,7 +783,7 @@ body {
 
   &__list {
     border: 1px solid $black;
-    height: 600px;
+    height: 300px * 2 + 4px * 2 + 2px;
     margin-bottom: 60px;
     width: 100%;
   }
@@ -796,17 +796,13 @@ body {
 
   @media screen and (max-width: 1200px) {
     &__list {
-      height: 900px;
-    }
-
-    &__item {
-      height: 300px;
+      height: 300px * 3 + 4px * 3 + 2px;
     }
   }
 
   @media screen and (max-width: 800px) {
     &__list {
-      height: 750px;
+      height: 250px * 3 + 4px * 3 + 2px;
     }
 
     &__item {
@@ -816,7 +812,7 @@ body {
 
   @media screen and (max-width: 600px) {
     &__list {
-      height: calc((90vw - 10px) * (10 / 16) * 6);
+      height: calc((90vw - 10px) * (10 / 16) * 6 + 3px);
     }
 
     &__item {
@@ -834,27 +830,27 @@ body {
     width: 100%;
 
     &.--1 {
-      background-image: url(works/creson/top_sum.png);
+      background-image: url(../../works/creson/top_sum.png);
     }
 
     &.--2 {
-      background-image: url(works/creson/douyin_sum.png);
+      background-image: url(../../works/creson/douyin_sum.png);
     }
 
     &.--3 {
-      background-image: url(works/creson/LP-design_develop.png);
+      background-image: url(../../works/creson/LP-design_develop.png);
     }
 
     &.--4 {
-      background-image: url(works/creson/media_develop.png);
+      background-image: url(../../works/creson/media_develop.png);
     }
 
     &.--5 {
-      background-image: url(works/WP_develop_A.jpg);
+      background-image: url(../../works/WP_develop_A.jpg);
     }
 
     &.--6 {
-      background-image: url(works/Design_A.jpg);
+      background-image: url(../../works/Design_A.jpg);
     }
 
     &:hover {
