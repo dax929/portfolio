@@ -362,22 +362,6 @@ body {
       $transX: -($size-progress * 2);
       $transY: -($size-progress / 2);
 
-      @media screen and (max-width: 600px) {
-        $size-progress: 50px;
-
-        $startHeight: $size-progress * 1.2;
-        $startWidth: $size-progress * 5;
-        
-        $goalHeight: $size-progress * 1.2 * 1.5;
-        $goalWidth: $size-progress * 6.5;
-  
-        $zoomHeight: $goalHeight - $startHeight;
-        $zoomWidth: $goalWidth - $startWidth;
-  
-        $transX: -($size-progress * 0.75);
-        $transY: -($size-progress * 0.3);
-      }
-
       @keyframes zoom {
         0% {
           height: $startHeight;
@@ -404,6 +388,53 @@ body {
           height: $goalHeight;
           transform: translate($transX, $transY);
           width: $goalWidth;
+        }
+      }
+
+      @media screen and (max-width: 600px) {
+        animation: zoomSp .6s linear forwards;
+
+        $size-progress: 50px;
+
+        $startHeight: $size-progress * 1.2;
+        $startWidth: $size-progress * 5;
+        
+        $goalHeight: $size-progress * 1.2 * 1.5;
+        $goalWidth: $size-progress * 6.5;
+  
+        $zoomHeight: $goalHeight - $startHeight;
+        $zoomWidth: $goalWidth - $startWidth;
+  
+        $transX: -($size-progress * 0.75);
+        $transY: -($size-progress * 0.3);
+
+        @keyframes zoomSp {
+          0% {
+            height: $startHeight;
+            width: $startWidth;
+          }
+  
+          20% {
+            $p: 0.33;
+  
+            height: $startHeight + $zoomHeight * $p;
+            transform: translate($transX * $p , $transY * $p);
+            width: $startWidth + $zoomWidth * $p;
+          }
+  
+          40% {
+            $p: 0.66;
+  
+            height: $startHeight + $zoomHeight * $p;
+            transform: translate($transX * $p , $transY * $p);
+            width: $startWidth + $zoomWidth * $p;
+          }
+  
+          60% {
+            height: $goalHeight;
+            transform: translate($transX, $transY);
+            width: $goalWidth;
+          }
         }
       }
     }
@@ -538,13 +569,13 @@ body {
         }
   
         &.--c {
-          $x: 0.8;
+          $x: 0.5;
           
           transform: translate($boxSize * $x, 0);
         }
   
         &.--d {
-          $x: 1.2;
+          $x: 1.5;
           
           transform: translate($boxSize * $x , calc($vh * 100 - $boxSize));
         }
@@ -776,6 +807,7 @@ body {
 
   @media screen and (max-width: 600px) {
     height: calc(var(--vh , 1vh) * 90);
+    min-height: calc(var(--vh , 1vh) * 90);
     top: calc(var(--vh , 1vh) * 5);
   }
 }
