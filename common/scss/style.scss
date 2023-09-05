@@ -24,7 +24,7 @@ body {
 .l-wrapper {
   background-color: $white;
   height: 100vh;
-  max-height: calc(var(--vh , 1vw) * 100);
+  max-height: calc(var(--vh , 1vh) * 100);
   overflow: hidden;
   position: fixed;
   width: 100%;
@@ -360,9 +360,9 @@ body {
 
     &__btn {
       &.is-active {
-        height: $size-progress * 2.4;
-        transform: translate((-($size-progress * 2)),(-($size-progress / 2)));
-        width: $size-progress * 10;
+        height: $size-progress * 1.2 * 1.5;
+        transform: translate((-($size-progress * 0.75)),(-($size-progress  * 0.3)));
+        width: $size-progress * 6.5;
       }
     }
 
@@ -417,10 +417,15 @@ body {
     }
 
     &__box {
-      $boxSize:(100vw / 6);
+      $boxSize: (100vw / 6);
 
       height: $boxSize;
       width: $boxSize;
+
+      @media screen and (max-width: 600px) {
+        height: $boxSize * 2;
+        width: $boxSize * 2;
+      }
 
       &.--a {
         $x: 0;
@@ -430,30 +435,45 @@ body {
 
       &.--b {
         $x: 1;
+        @media screen and (max-width: 600px) {
+          $x: 0.5;
+        }
         
         transform: translate($boxSize * $x , 50vh);
       }
 
       &.--c {
         $x: 1.5;
+        @media screen and (max-width: 600px) {
+          $x: 0.8;
+        }
         
         transform: translate($boxSize * $x, 0);
       }
 
       &.--d {
         $x: 3.5;
+        @media screen and (max-width: 600px) {
+          $x: 1.2;
+        }
         
         transform: translate($boxSize * $x , calc(100vh - $boxSize));
       }
 
       &.--e {
-        $x: 4;
+        $x: 3.5;
+        @media screen and (max-width: 600px) {
+          $x: 1.5;
+        }
         
         transform: translate($boxSize * $x , calc(50vh - $boxSize));
       }
 
       &.--f {
         $x: 5;
+        @media screen and (max-width: 600px) {
+          $x: 2;
+        }
         
         transform: translate($boxSize * $x , 50vh);
       }
@@ -672,6 +692,7 @@ body {
 
   @media screen and (max-width: 600px) {
     height: 90%;
+    max-height: calc(var(--vh , 1vh) * 90);;
     top: 5%;
   }
 }
@@ -760,6 +781,15 @@ body {
       font-family: balboa-plus-fill, sans-serif;
       font-size: 28px;
     }
+
+    @media screen and (max-width: 600px) {
+      height: 100px;
+
+      &__text {
+        font-size: 24px;
+      }
+    }
+
   }
 
   &__contact {

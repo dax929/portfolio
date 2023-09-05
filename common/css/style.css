@@ -12,7 +12,7 @@ body {
 .l-wrapper {
   background-color: #f8f8f8;
   height: 100vh;
-  max-height: calc(var(--vh, 1vw) * 100);
+  max-height: calc(var(--vh, 1vh) * 100);
   overflow: hidden;
   position: fixed;
   width: 100%;
@@ -297,9 +297,9 @@ body {
     width: 250px;
   }
   .p-tap__btn.is-active {
-    height: 120px;
-    transform: translate(-100px, -25px);
-    width: 500px;
+    height: 90px;
+    transform: translate(-37.5px, -15px);
+    width: 325px;
   }
   .p-tap__text {
     font-size: 14px;
@@ -348,23 +348,29 @@ body {
   height: 16.6666666667vw;
   width: 16.6666666667vw;
 }
+@media screen and (max-width: 600px) {
+  .p-bg-cp__box {
+    height: 33.3333333333vw;
+    width: 33.3333333333vw;
+  }
+}
 .p-bg-cp__box.--a {
   transform: translate(0vw, calc(50vh - 16.6666666667vw));
 }
 .p-bg-cp__box.--b {
-  transform: translate(16.6666666667vw, 50vh);
+  transform: translate(8.3333333333vw, 50vh);
 }
 .p-bg-cp__box.--c {
-  transform: translate(25vw, 0);
+  transform: translate(13.3333333333vw, 0);
 }
 .p-bg-cp__box.--d {
-  transform: translate(58.3333333333vw, calc(100vh - 16.6666666667vw));
+  transform: translate(20vw, calc(100vh - 16.6666666667vw));
 }
 .p-bg-cp__box.--e {
-  transform: translate(66.6666666667vw, calc(50vh - 16.6666666667vw));
+  transform: translate(25vw, calc(50vh - 16.6666666667vw));
 }
 .p-bg-cp__box.--f {
-  transform: translate(83.3333333333vw, 50vh);
+  transform: translate(33.3333333333vw, 50vh);
 }
 .p-bg-cp__img {
   -webkit-clip-path: url(#cp);
@@ -552,6 +558,7 @@ body {
 @media screen and (max-width: 600px) {
   .p-page {
     height: 90%;
+    max-height: calc(var(--vh, 1vh) * 90);
     top: 5%;
   }
 }
@@ -631,6 +638,14 @@ body {
   color: #f8f8f8;
   font-family: balboa-plus-fill, sans-serif;
   font-size: 28px;
+}
+@media screen and (max-width: 600px) {
+  .p-about__link {
+    height: 100px;
+  }
+  .p-about__link__text {
+    font-size: 24px;
+  }
 }
 .p-about__contact {
   background-color: #f8e58c;

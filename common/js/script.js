@@ -43,7 +43,7 @@ const isSP = (() => {
   }else{
     return false;
   }
-})
+})();
 
 // DOM要素の取得
 const DOMList = (() => {
@@ -226,28 +226,29 @@ const handleCursorFunc = (() => {
   let mouseX = 0;
   let mouseY = 0;
 
-  document.addEventListener('mousemove' , (e) => {
-    mouseX = e.pageX;
-    mouseY = e.pageY;
+  if(!isSP){
+    document.addEventListener('mousemove' , (e) => {
+      mouseX = e.pageX;
+      mouseY = e.pageY;
 
-    const translateCursorFunc = (cursor,size) => {
-      cursor.style.transform = 'translate(' + (mouseX - size / 2) + 'px,' + (mouseY - size / 2) + 'px)';
-    }
+      const translateCursorFunc = (cursor,size) => {
+        cursor.style.transform = 'translate(' + (mouseX - size / 2) + 'px,' + (mouseY - size / 2) + 'px)';
+      }
 
-    translateCursorFunc(cursorDot,dotSize);
-    translateCursorFunc(cursorFollower,followerSize);
-  })
+      translateCursorFunc(cursorDot,dotSize);
+      translateCursorFunc(cursorFollower,followerSize);
+    })
 
-  document.addEventListener('mouseleave',() => {
-    cursorDot.classList.add('is-none');
-    cursorFollower.classList.add('is-none');
-  })
+    document.addEventListener('mouseleave',() => {
+      cursorDot.classList.add('is-none');
+      cursorFollower.classList.add('is-none');
+    })
 
-  document.addEventListener('mouseenter',() => {
-    cursorDot.classList.remove('is-none');
-    cursorFollower.classList.remove('is-none');
-  })
-
+    document.addEventListener('mouseenter',() => {
+      cursorDot.classList.remove('is-none');
+      cursorFollower.classList.remove('is-none');
+    })
+  }
 })();
 
 // クリップパスアニメーション
@@ -261,23 +262,25 @@ const handleClipPathFunc = (() => {
     }
     const boxList = Object.keys(boxObject);
     
-    let sizeData = getSizeDataFunc(boxList);
-
-    const updateSizeData = () => {
-      sizeData = getSizeDataFunc(boxList);
-    }
-
-    const throttledMouseMove = throttle((e) => {
-      if(eventFlag['clipPath']){
-        handleMouseMove(e, boxObject, boxList, sizeData);
+    if(!isSP){
+      let sizeData = getSizeDataFunc(boxList);
+  
+      const updateSizeData = () => {
+        sizeData = getSizeDataFunc(boxList);
       }
-    }, 20); 
-
-    document.addEventListener('mousemove', throttledMouseMove);
-
-    window.addEventListener('resize', debounce(() => {
-      updateSizeData();
-    }, 250));
+  
+      const throttledMouseMove = throttle((e) => {
+        if(eventFlag['clipPath']){
+          handleMouseMove(e, boxObject, boxList, sizeData);
+        }
+      }, 20); 
+  
+      document.addEventListener('mousemove', throttledMouseMove);
+  
+      window.addEventListener('resize', debounce(() => {
+        updateSizeData();
+      }, 250));
+    }
   }
 
   // サイズに関する変数を定義 → リサイズごとに発火
