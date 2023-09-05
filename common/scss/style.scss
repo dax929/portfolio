@@ -954,7 +954,8 @@ body {
 
   @media screen and (max-width: 600px) {
     &__list {
-      height: calc((90vw - 10px) * (10 / 16) * 6 + 3px);
+      $vw: var(--vw , 1vw);
+      height: calc(($vw * 90 - 10px) * (10 / 16) * 6 + 3px);
       margin-bottom: 40px;
     }
 

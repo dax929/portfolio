@@ -754,7 +754,7 @@ body {
 }
 @media screen and (max-width: 600px) {
   .p-works__list {
-    height: calc((90vw - 10px) * 0.625 * 6 + 3px);
+    height: calc((var(--vw, 1vw) * 90 - 10px) * 0.625 * 6 + 3px);
     margin-bottom: 40px;
   }
   .p-works__item {
