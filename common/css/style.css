@@ -59,6 +59,13 @@ body {
   text-align: center;
   text-indent: 0.8em;
 }
+@media screen and (max-width: 600px) {
+  .c-text--space-60 {
+    letter-spacing: 0.6em;
+    text-align: center;
+    text-indent: 0.6em;
+  }
+}
 
 .c-scroll-box {
   height: 100%;
@@ -202,7 +209,7 @@ body {
 @media screen and (max-width: 600px) {
   .p-progress__title {
     font-size: 50px;
-    top: calc(48vh - 41.5px);
+    top: calc(44vh - 41.5px);
     width: 6em;
   }
 }
@@ -228,6 +235,7 @@ body {
   .p-progress__bar {
     height: 60px;
     left: calc(50vw - 125px);
+    top: 44vh;
     width: 250px;
   }
   .p-progress__bar.is-load-complete {
@@ -245,7 +253,7 @@ body {
 }
 @media screen and (max-width: 600px) {
   .p-progress__num {
-    top: calc(48vh + 80px);
+    top: calc(44vh + 80px);
   }
 }
 
@@ -257,24 +265,50 @@ body {
   width: 320px;
   z-index: 6;
 }
+@media screen and (max-width: 600px) {
+  .p-tap {
+    height: 60px;
+    top: 44vh;
+    width: 250px;
+  }
+}
 .p-tap__btn {
   background-color: #070707;
   color: #f8f8f8;
   cursor: none;
   height: 100%;
   margin: auto;
-  transition: all 0.4s;
+  transition: background-color 0.4s, opacity 0.6s;
   width: 100%;
 }
 .p-tap__btn:hover {
   background-color: #f8e58c;
 }
 .p-tap__btn.is-active {
+  animation: zoom 0.6s linear forwards;
   background-color: #f8e58c;
-  height: 160px;
   opacity: 0 !important;
-  transform: translate(-160px, -40px);
-  width: 640px;
+}
+@keyframes zoom {
+  0% {
+    height: 60px;
+    width: 250px;
+  }
+  20% {
+    height: 69.9px;
+    transform: translate(-12.375px, -4.95px);
+    width: 274.75px;
+  }
+  40% {
+    height: 79.8px;
+    transform: translate(-24.75px, -9.9px);
+    width: 299.5px;
+  }
+  60% {
+    height: 90px;
+    transform: translate(-37.5px, -15px);
+    width: 325px;
+  }
 }
 .p-tap__text {
   animation: blink 0.7s linear infinite alternate;
@@ -292,15 +326,6 @@ body {
   }
 }
 @media screen and (max-width: 600px) {
-  .p-tap {
-    height: 60px;
-    width: 250px;
-  }
-  .p-tap__btn.is-active {
-    height: 90px;
-    transform: translate(-37.5px, -15px);
-    width: 325px;
-  }
   .p-tap__text {
     font-size: 14px;
   }
@@ -320,7 +345,7 @@ body {
 }
 @media screen and (max-width: 600px) {
   .p-bg-text {
-    font-size: 10vw;
+    font-size: 12vw;
   }
 }
 .p-bg-text.--top {

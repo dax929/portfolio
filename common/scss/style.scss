@@ -73,6 +73,15 @@ body {
       text-align: center;
       text-indent: .8em;
     }
+
+    @media screen and (max-width: 600px) {
+      &-60 {
+        letter-spacing: .6em;
+        text-align: center;
+        text-indent: .6em;
+      }
+
+    }
   }
 }
 
@@ -248,7 +257,7 @@ body {
       $size-progress: 50px;
 
       font-size: $size-progress;
-      top: calc(48vh - $size-progress * 0.83);
+      top: calc(44vh - $size-progress * 0.83);
       width: 6em;
     }
   }
@@ -281,6 +290,7 @@ body {
 
       height: $size-progress * 1.2;
       left: calc(50vw - $width / 2);
+      top: 44vh;
       width: $width;
 
       &.is-load-complete {
@@ -299,7 +309,7 @@ body {
     z-index: 4;
 
     @media screen and (max-width: 600px) {
-      top: calc(48vh + 80px);
+      top: calc(44vh + 80px);
     }
   }
 }
@@ -312,6 +322,14 @@ body {
   width: $size-progress * 4;
   z-index: 6;
 
+  @media screen and (max-width: 600px) {
+    $size-progress: 50px;
+
+    height: $size-progress * 1.2;
+    top: 44vh;
+    width: $size-progress * 5;
+  }
+
   &__btn {
     background-color: $black;
     color: $white;
@@ -319,7 +337,8 @@ body {
     cursor: none;
     height: 100%;
     margin: auto;
-    transition: all .4s;
+    transition: background-color .4s,
+                opacity .6s;
     width: 100%;
 
     &:hover {
@@ -327,11 +346,66 @@ body {
     }
 
     &.is-active {
+      animation: zoom .6s linear forwards;
       background-color: $yellow;
-      height: $size-progress * 2;
       opacity: 0 !important;
-      transform: translate((-($size-progress * 2)),(-($size-progress / 2)));
-      width: $size-progress * 8;
+
+      $startHeight: $size-progress;
+      $startWidth: $size-progress * 4;
+      
+      $goalHeight: $size-progress * 2;
+      $goalWidth: $size-progress * 8;
+
+      $zoomHeight: $goalHeight - $startHeight;
+      $zoomWidth: $goalWidth - $startWidth;
+
+      $transX: -($size-progress * 2);
+      $transY: -($size-progress / 2);
+
+      @media screen and (max-width: 600px) {
+        $size-progress: 50px;
+
+        $startHeight: $size-progress * 1.2;
+        $startWidth: $size-progress * 5;
+        
+        $goalHeight: $size-progress * 1.2 * 1.5;
+        $goalWidth: $size-progress * 6.5;
+  
+        $zoomHeight: $goalHeight - $startHeight;
+        $zoomWidth: $goalWidth - $startWidth;
+  
+        $transX: -($size-progress * 0.75);
+        $transY: -($size-progress * 0.3);
+      }
+
+      @keyframes zoom {
+        0% {
+          height: $startHeight;
+          width: $startWidth;
+        }
+
+        20% {
+          $p: 0.33;
+
+          height: $startHeight + $zoomHeight * $p;
+          transform: translate($transX * $p , $transY * $p);
+          width: $startWidth + $zoomWidth * $p;
+        }
+
+        40% {
+          $p: 0.66;
+
+          height: $startHeight + $zoomHeight * $p;
+          transform: translate($transX * $p , $transY * $p);
+          width: $startWidth + $zoomWidth * $p;
+        }
+
+        60% {
+          height: $goalHeight;
+          transform: translate($transX, $transY);
+          width: $goalWidth;
+        }
+      }
     }
   }
 
@@ -350,23 +424,8 @@ body {
         opacity: 1;
       }
     }
-  }
 
-  @media screen and (max-width: 600px) {
-    $size-progress: 50px;
-
-    height: $size-progress * 1.2;
-    width: $size-progress * 5;
-
-    &__btn {
-      &.is-active {
-        height: $size-progress * 1.2 * 1.5;
-        transform: translate((-($size-progress * 0.75)),(-($size-progress  * 0.3)));
-        width: $size-progress * 6.5;
-      }
-    }
-
-    &__text {
+    @media screen and (max-width: 600px) {
       font-size: 14px;
     }
   }
@@ -387,7 +446,7 @@ body {
     z-index: 995;
 
     @media screen and (max-width: 600px) {
-      font-size: 10vw;
+      font-size: 12vw;
     }
 
     &.--top {
