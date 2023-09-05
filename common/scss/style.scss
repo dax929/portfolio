@@ -481,11 +481,6 @@ body {
       height: $boxSize;
       width: $boxSize;
 
-      @media screen and (max-width: 600px) {
-        height: $boxSize * 2;
-        width: $boxSize * 2;
-      }
-
       &.--a {
         $x: 0;
 
@@ -494,47 +489,77 @@ body {
 
       &.--b {
         $x: 1;
-        @media screen and (max-width: 600px) {
-          $x: 0.5;
-        }
         
         transform: translate($boxSize * $x , 50vh);
       }
 
       &.--c {
         $x: 1.5;
-        @media screen and (max-width: 600px) {
-          $x: 0.8;
-        }
         
         transform: translate($boxSize * $x, 0);
       }
 
       &.--d {
         $x: 3.5;
-        @media screen and (max-width: 600px) {
-          $x: 1.2;
-        }
         
         transform: translate($boxSize * $x , calc(100vh - $boxSize));
       }
 
       &.--e {
         $x: 3.5;
-        @media screen and (max-width: 600px) {
-          $x: 1.5;
-        }
         
         transform: translate($boxSize * $x , calc(50vh - $boxSize));
       }
 
       &.--f {
         $x: 5;
-        @media screen and (max-width: 600px) {
-          $x: 2;
-        }
         
         transform: translate($boxSize * $x , 50vh);
+      }
+
+      @media screen and (max-width: 600px) {
+        $boxSize: (100vw / 3);
+  
+        height: $boxSize;
+        width: $boxSize;
+
+        $vh: var(--vh , 1vh);
+  
+        &.--a {
+          $x: 0;
+  
+          transform: translate($boxSize * $x, calc($vh * 50 - $boxSize));
+        }
+  
+        &.--b {
+          $x: 0.5;
+          
+          transform: translate($boxSize * $x , calc($vh * 50 + $boxSize));
+        }
+  
+        &.--c {
+          $x: 0.8;
+          
+          transform: translate($boxSize * $x, 0);
+        }
+  
+        &.--d {
+          $x: 1.2;
+          
+          transform: translate($boxSize * $x , calc($vh * 100 - $boxSize));
+        }
+  
+        &.--e {
+          $x: 1.5;
+          
+          transform: translate($boxSize * $x , calc($vh * 50 - $boxSize * 2));
+        }
+  
+        &.--f {
+          $x: 2;
+          
+          transform: translate($boxSize * $x , calc($vh * 50));
+        }
       }
     }
 
@@ -750,9 +775,8 @@ body {
   }
 
   @media screen and (max-width: 600px) {
-    height: 90%;
-    max-height: calc(var(--vh , 1vh) * 90);;
-    top: 5%;
+    height: calc(var(--vh , 1vh) * 90);
+    top: calc(var(--vh , 1vh) * 5);
   }
 }
 
