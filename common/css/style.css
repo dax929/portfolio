@@ -755,6 +755,7 @@ body {
 @media screen and (max-width: 600px) {
   .p-works__list {
     height: calc((90vw - 10px) * 0.625 * 6 + 3px);
+    margin-bottom: 40px;
   }
   .p-works__item {
     aspect-ratio: 16/10;
@@ -845,4 +846,12 @@ body {
 .p-works__more-text {
   font-size: 24px;
   width: 100%;
+}
+@media screen and (max-width: 600px) {
+  .p-works__more {
+    margin: auto auto 30px;
+  }
+  .p-works__more-text {
+    font-size: 18px;
+  }
 }

@@ -955,6 +955,7 @@ body {
   @media screen and (max-width: 600px) {
     &__list {
       height: calc((90vw - 10px) * (10 / 16) * 6 + 3px);
+      margin-bottom: 40px;
     }
 
     &__item {
@@ -1065,6 +1066,14 @@ body {
     &-text {
       font-size: 24px;
       width: 100%;
+    }
+
+    @media screen and (max-width: 600px) {
+      margin: auto auto 30px;
+
+      &-text {
+        font-size: 18px;
+      }
     }
   }
 }
